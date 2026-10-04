@@ -64,7 +64,7 @@ s=s.replace(marker,note+marker,1)
 all_images=['projekt-stambeni-naslovna.png']+[f'projekt-stambeni-0{i}.jpg' for i in range(1,7)]
 all_images += [
 'projekt-stambeni/07-elektroinstalacije-pregradni-zid.jpg','projekt-stambeni/08-stolarija-pogled.jpg','projekt-stambeni/09-zidovi-priprema.jpg','projekt-stambeni/10-elektroizvodi-strop.jpg','projekt-stambeni/11-boravak-stolarija.jpg','projekt-stambeni/12-kutna-stolarija.jpg','projekt-stambeni/13-prostor-sa-stolarijom.jpg','projekt-stambeni/14-elektroizvodi-zid.jpg','projekt-stambeni/15-zavrsna-priprema-zidova.jpg','projekt-stambeni/16-unutarnja-stolarija.jpg','projekt-stambeni/17-vodovodne-instalacije.jpg','projekt-stambeni/18-elektroinstalacije-soba.jpg','projekt-stambeni/19-stepeniste.jpg','projekt-stambeni/20-vodovodne-cijevi.jpg','projekt-stambeni/21-suhomontazni-radovi.jpg']
-imgjson=json.dumps(['https://proinmont-jedan.online/assets/'+x for x in all_images],ensure_ascii=False,separators=(',',':'))
+imgjson=json.dumps(['https://proinmont-jedan.com.hr/assets/'+x for x in all_images],ensure_ascii=False,separators=(',',':'))
 s=re.sub(r'("@type":"ImageGallery","name":"Galerija projekta stambenog objekta","image":)\[[^\]]*\]', r'\1'+imgjson, s, count=1)
 p.write_text(s)
 print('updated', len(all_images), 'images')
